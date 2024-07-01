@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "open=false": { "model": "ancientsand:block/royal_chamber_closed" },
+        "open=true": { "model": "ancientsand:block/royal_chamber_open" }
+    }
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "ancientsand:block/remnant_slab"
+    },
+    "type=double": {
+      "model": "ancientsand:block/remnant_block"
+    },
+    "type=top": {
+      "model": "ancientsand:block/remnant_slab_top"
+    }
+  }
+}

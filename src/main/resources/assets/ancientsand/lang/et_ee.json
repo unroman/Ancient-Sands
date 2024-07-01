@@ -1,0 +1,20 @@
+{
+ "itemGroup.sandgroup": "Iidsed liivad",
+
+ "item.ancientsand.ancient_ingot": "Iidne metallikang",
+ "item.ancientsand.ancient_nugget": "Iidne metallivaland",
+ "item.ancientsand.ancient_sword": "Iidne mõõk",
+ "item.ancientsand.ancient_dagger": "Pistoda",
+ "item.ancientsand.chamber_key": "Kambri võti",
+ "item.ancientsand.royal_key": "Kuninglik võti",
+ "item.ancientsand.lost_spawn_egg": "Kadunute sünnimuna",
+ "entity.ancientsand.lost": "Kadunud",
+
+ "block.ancientsand.remnant_block": "Vanutatud plokk",
+ "block.ancientsand.remnant_stairs": "Vanutatud trepp",
+ "block.ancientsand.remnant_slab": "Vanutatud plaat",
+ "block.ancientsand.ancient_block": "Iidne metalliplokk",
+ "block.ancientsand.chamber": "Tavaline kamber",
+ "block.ancientsand.royal_chamber": "Kuninglik kamber",
+ "block.ancientsand.royal_carpet": "Kuninglik vaip"
+}

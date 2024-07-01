@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "ancientsand:remnant_block",
+    "ancientsand:remnant_stairs",
+    "ancientsand:remnant_slab",
+    "ancientsand:ancient_block",
+    "ancientsand:chamber",
+    "ancientsand:royal_chamber"
+  ]
+}

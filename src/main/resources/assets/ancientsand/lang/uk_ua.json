@@ -1,0 +1,20 @@
+{
+ "itemGroup.sandgroup": "Давні пустелі",
+
+ "item.ancientsand.ancient_ingot": "Злиток давнього металу",
+ "item.ancientsand.ancient_nugget": "Самородок давнього металу",
+ "item.ancientsand.ancient_sword": "Давній меч",
+ "item.ancientsand.ancient_dagger": "Кинжал",
+ "item.ancientsand.chamber_key": "Ключ сховища",
+ "item.ancientsand.royal_key": "Королівський ключ",
+ "item.ancientsand.lost_spawn_egg": "Яйце виклику забутого",
+ "entity.ancientsand.lost": "Забутий",
+
+ "block.ancientsand.remnant_block": "Віковий блок",
+ "block.ancientsand.remnant_stairs": "Сходи з вікового блоку",
+ "block.ancientsand.remnant_slab": "Плита з вікового блоку",
+ "block.ancientsand.ancient_block": "Блок давнього металу",
+ "block.ancientsand.chamber": "Звичайне сховище",
+ "block.ancientsand.royal_chamber": "Королівське сховище",
+ "block.ancientsand.royal_carpet": "Королівський килим"
+}

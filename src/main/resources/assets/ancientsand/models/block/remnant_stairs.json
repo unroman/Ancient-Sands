@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "ancientsand:block/remnant_block",
+    "top": "ancientsand:block/remnant_block",
+    "side": "ancientsand:block/remnant_block"
+  }
+}

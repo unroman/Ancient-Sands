@@ -1,0 +1,20 @@
+{
+ "itemGroup.sandgroup": "Ancient Sands",
+
+ "item.ancientsand.ancient_ingot": "Ancient Metal Ingot",
+ "item.ancientsand.ancient_nugget": "Ancient Metal Nugget",
+ "item.ancientsand.ancient_sword": "Ancient Sword",
+ "item.ancientsand.ancient_dagger": "Dagger",
+ "item.ancientsand.chamber_key": "Chamber Key",
+ "item.ancientsand.royal_key": "Royal Key",
+ "item.ancientsand.lost_spawn_egg": "Lost Spawn Egg",
+ "entity.ancientsand.lost": "Lost",
+
+ "block.ancientsand.remnant_block": "Remnant Block",
+ "block.ancientsand.remnant_stairs": "Remnant Stairs",
+ "block.ancientsand.remnant_slab": "Remnant Slab",
+ "block.ancientsand.ancient_block": "Block of Ancient Metal",
+ "block.ancientsand.chamber": "Ordinary Chamber",
+ "block.ancientsand.royal_chamber": "Royal Chamber",
+ "block.ancientsand.royal_carpet": "Royal Carpet"
+}

@@ -1,0 +1,20 @@
+{
+ "itemGroup.sandgroup": "Древние пустыни",
+
+ "item.ancientsand.ancient_ingot": "Слиток древнего металла",
+ "item.ancientsand.ancient_nugget": "Самородок древнего металла",
+ "item.ancientsand.ancient_sword": "Древний меч",
+ "item.ancientsand.ancient_dagger": "Кинжал",
+ "item.ancientsand.chamber_key": "Ключ хранилища",
+ "item.ancientsand.royal_key": "Королевский ключ",
+ "item.ancientsand.lost_spawn_egg": "Яйцо призыва забытого",
+ "entity.ancientsand.lost": "Забытый",
+
+ "block.ancientsand.remnant_block": "Вековой блок",
+ "block.ancientsand.remnant_stairs": "Ступеньки из векового блока",
+ "block.ancientsand.remnant_slab": "Плита из векового блока",
+ "block.ancientsand.ancient_block": "Блок древнего металла",
+ "block.ancientsand.chamber": "Обычное хранилище",
+ "block.ancientsand.royal_chamber": "Королевское хранилище",
+ "block.ancientsand.royal_carpet": "Королевский ковер"
+}

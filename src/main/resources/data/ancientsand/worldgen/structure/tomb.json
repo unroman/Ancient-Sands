@@ -1,0 +1,6 @@
+{
+  "type": "ancientsand:tomb",
+  "biomes": "#minecraft:has_structure/desert_pyramid",
+  "spawn_overrides": {},
+  "step": "surface_structures"
+}

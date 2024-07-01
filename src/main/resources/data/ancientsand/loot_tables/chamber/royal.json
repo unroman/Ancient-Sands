@@ -1,0 +1,44 @@
+{
+  "type": "minecraft:archaeology",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "ancientsand:ancient_nugget"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:emerald"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "ancientsand:ancient_ingot"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:bone"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "ancientsand:ancient_dagger"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:golden_carrot"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "ancientsand:ancient_sword"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:saddle"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "minecraft:archaeology/desert_pyramid"
+}

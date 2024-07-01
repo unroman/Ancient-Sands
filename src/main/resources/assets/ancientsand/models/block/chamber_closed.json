@@ -1,0 +1,8 @@
+{
+    "parent": "block/cube_bottom_top",
+    "textures": {
+        "bottom": "ancientsand:block/ancient_block",
+        "top": "ancientsand:block/chamber_closed",
+        "side": "ancientsand:block/chamber_side"
+    }
+}
