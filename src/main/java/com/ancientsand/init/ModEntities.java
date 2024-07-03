@@ -32,5 +32,4 @@ public class ModEntities {
         event.registerLayerDefinition(ModLayers.PARCHED, ParchedModel::createBodyLayer);
         event.registerLayerDefinition(ModLayers.MOURNER, MournerModel::createBodyLayer);
     }
-
 }

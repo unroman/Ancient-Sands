@@ -7,7 +7,7 @@ import net.minecraft.world.item.CreativeModeTab;
 public class ModTab {
     public static void setup() {
         AncientMod.CREATIVE_TAB.register("sandgroup", () -> CreativeModeTab.builder()
-                .icon(() -> ModItems.ANCIENT_SWORD.get().asItem().getDefaultInstance())
+                .icon(() -> ModItems.CHAMBER_KEY.get().asItem().getDefaultInstance())
                 .title(Component.translatable("itemGroup.sandgroup"))
                 .displayItems((parameters, output) -> {
                     output.accept(ModBlocks.ANCIENT_BLOCK.get());

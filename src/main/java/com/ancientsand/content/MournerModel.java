@@ -39,7 +39,35 @@ public class MournerModel<T extends Mourner> extends HumanoidModel<T> {
     }
 
     public void setupAnim(T entity, float p_103799_, float p_103800_, float p_103801_, float p_103802_, float p_103803_) {
-        super.setupAnim(entity, p_103799_, p_103800_, p_103801_, p_103802_, p_103803_);
+        this.head.yRot = p_103802_ * ((float)Math.PI / 180F);
+        this.head.xRot = p_103803_ * ((float)Math.PI / 180F);
+        if (this.riding) {
+            this.rightArm.xRot = (-(float)Math.PI / 5F);
+            this.rightArm.yRot = 0.0F;
+            this.rightArm.zRot = 0.0F;
+            this.leftArm.xRot = (-(float)Math.PI / 5F);
+            this.leftArm.yRot = 0.0F;
+            this.leftArm.zRot = 0.0F;
+            this.rightLeg.xRot = -1.4137167F;
+            this.rightLeg.yRot = ((float)Math.PI / 10F);
+            this.rightLeg.zRot = 0.07853982F;
+            this.leftLeg.xRot = -1.4137167F;
+            this.leftLeg.yRot = (-(float)Math.PI / 10F);
+            this.leftLeg.zRot = -0.07853982F;
+        } else {
+            this.rightArm.xRot = Mth.cos(p_103799_ * 0.6662F + (float)Math.PI) * 2.0F * p_103800_ * 0.5F;
+            this.rightArm.yRot = 0.0F;
+            this.rightArm.zRot = 0.0F;
+            this.leftArm.xRot = Mth.cos(p_103799_ * 0.6662F) * 2.0F * p_103800_ * 0.5F;
+            this.leftArm.yRot = 0.0F;
+            this.leftArm.zRot = 0.0F;
+            this.rightLeg.xRot = Mth.cos(p_103799_ * 0.6662F) * 1.4F * p_103800_ * 0.5F;
+            this.rightLeg.yRot = 0.0F;
+            this.rightLeg.zRot = 0.0F;
+            this.leftLeg.xRot = Mth.cos(p_103799_ * 0.6662F + (float)Math.PI) * 1.4F * p_103800_ * 0.5F;
+            this.leftLeg.yRot = 0.0F;
+            this.leftLeg.zRot = 0.0F;
+        }
         if (entity.isCasting()) {
             this.rightArm.z = 0.0F;
             this.rightArm.x = -5.0F;
@@ -51,6 +79,9 @@ public class MournerModel<T extends Mourner> extends HumanoidModel<T> {
             this.leftArm.zRot = -2.3561945F;
             this.rightArm.yRot = 0.0F;
             this.leftArm.yRot = 0.0F;
+        }
+        if (!entity.isAggressive()) {
+            this.head.xRot = Mth.cos(p_103799_ * 0.6662F) * p_103800_ * 0.4F;
         }
     }
 

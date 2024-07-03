@@ -2,8 +2,8 @@ package com.ancientsand.init;
 
 import com.ancientsand.AncientMod;
 import com.ancientsand.content.DaggerItem;
+import com.ancientsand.content.StrongSwordItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.SwordItem;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.registries.RegistryObject;
 
@@ -20,7 +20,7 @@ public class ModItems {
     public static RegistryObject<Item> MOURNER_EGG;
 
     public static void setup() {
-        ANCIENT_SWORD = register(() -> new SwordItem(ModTiers.ANCIENT, 3, -2.4f, new Item.Properties()), "ancient_sword");
+        ANCIENT_SWORD = register(() -> new StrongSwordItem(ModTiers.ANCIENT, 3, -2.4f, new Item.Properties()), "ancient_sword");
         ANCIENT_DAGGER = register(() -> new DaggerItem(ModTiers.DAGGER, 0, 1f, new Item.Properties()), "ancient_dagger");
         ANCIENT_INGOT = register(() -> new Item(new Item.Properties()), "ancient_ingot");
         ANCIENT_NUGGET = register(() -> new Item(new Item.Properties()), "ancient_nugget");

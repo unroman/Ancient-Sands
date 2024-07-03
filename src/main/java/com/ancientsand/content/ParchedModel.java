@@ -9,8 +9,6 @@ import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.HumanoidArm;
 import net.minecraft.world.entity.Mob;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
@@ -30,7 +28,6 @@ public class ParchedModel<T extends Mob> extends HumanoidModel<T> {
         partdefinition.addOrReplaceChild("left_leg", CubeListBuilder.create().texOffs(0, 16).mirror().addBox(-1.0F, 0.0F, -1.0F, 2.0F, 12.0F, 2.0F), PartPose.offset(2.0F, 12.0F, 0.0F));
         return LayerDefinition.create(meshdefinition, 64, 32);
     }
-
     public void prepareMobModel(T p_103793_, float p_103794_, float p_103795_, float p_103796_) {
         this.rightArmPose = HumanoidModel.ArmPose.EMPTY;
         this.leftArmPose = HumanoidModel.ArmPose.EMPTY;
@@ -38,23 +35,40 @@ public class ParchedModel<T extends Mob> extends HumanoidModel<T> {
     }
 
     public void setupAnim(T p_103798_, float p_103799_, float p_103800_, float p_103801_, float p_103802_, float p_103803_) {
-        super.setupAnim(p_103798_, p_103799_, p_103800_, p_103801_, p_103802_, p_103803_);
-        ItemStack itemstack = p_103798_.getMainHandItem();
-        if (p_103798_.isAggressive() && (itemstack.isEmpty() || !itemstack.is(Items.BOW))) {
-            float f = Mth.sin(this.attackTime * (float)Math.PI);
-            float f1 = Mth.sin((1.0F - (1.0F - this.attackTime) * (1.0F - this.attackTime)) * (float)Math.PI);
+        this.head.yRot = p_103802_ * ((float)Math.PI / 180F);
+        this.head.xRot = p_103803_ * ((float)Math.PI / 180F);
+        if (this.riding) {
+            this.rightArm.yRot = 0.0F;
             this.rightArm.zRot = 0.0F;
+            this.leftArm.xRot = (-(float)Math.PI / 5F);
+            this.leftArm.yRot = 0.0F;
             this.leftArm.zRot = 0.0F;
-            this.rightArm.yRot = -(0.1F - f * 0.6F);
-            this.leftArm.yRot = 0.1F - f * 0.6F;
-            this.rightArm.xRot = (-(float)Math.PI / 2F);
-            this.leftArm.xRot = (-(float)Math.PI / 2F);
-            this.rightArm.xRot -= f * 1.2F - f1 * 0.4F;
-            this.leftArm.xRot -= f * 1.2F - f1 * 0.4F;
-            AnimationUtils.bobArms(this.rightArm, this.leftArm, p_103801_);
+            this.rightLeg.xRot = -1.4137167F;
+            this.rightLeg.yRot = ((float)Math.PI / 10F);
+            this.rightLeg.zRot = 0.07853982F;
+            this.leftLeg.xRot = -1.4137167F;
+            this.leftLeg.yRot = (-(float)Math.PI / 10F);
+            this.leftLeg.zRot = -0.07853982F;
+        } else {
+            this.rightArm.yRot = 0.0F;
+            this.rightArm.zRot = 0.0F;
+            this.leftArm.xRot = Mth.cos(p_103799_ * 0.6662F) * 2.0F * p_103800_ * 0.5F;
+            this.leftArm.yRot = 0.0F;
+            this.leftArm.zRot = 0.0F;
+            this.rightLeg.xRot = Mth.cos(p_103799_ * 0.6662F) * 1.4F * p_103800_ * 0.5F;
+            this.rightLeg.yRot = 0.0F;
+            this.rightLeg.zRot = 0.0F;
+            this.leftLeg.xRot = Mth.cos(p_103799_ * 0.6662F + (float)Math.PI) * 1.4F * p_103800_ * 0.5F;
+            this.leftLeg.yRot = 0.0F;
+            this.leftLeg.zRot = 0.0F;
+        }
+        if (p_103798_.isAggressive()) {
+            AnimationUtils.swingWeaponDown(this.rightArm, this.leftArm, p_103798_, this.attackTime, p_103801_);
+        } else {
+            this.rightArm.xRot = 0.0F;
+            this.head.xRot = Mth.cos(p_103799_ * 0.6662F) * p_103800_ * 0.4F;
         }
     }
-
     public void translateToHand(HumanoidArm p_103778_, PoseStack p_103779_) {
         float f = p_103778_ == HumanoidArm.RIGHT ? 1.0F : -1.0F;
         ModelPart modelpart = this.getArm(p_103778_);
