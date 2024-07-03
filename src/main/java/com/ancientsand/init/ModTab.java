@@ -23,7 +23,8 @@ public class ModTab {
                     output.accept(ModItems.ANCIENT_DAGGER.get());
                     output.accept(ModItems.ANCIENT_INGOT.get());
                     output.accept(ModItems.ANCIENT_NUGGET.get());
-                    output.accept(ModItems.PRIEST_EGG.get());
+                    output.accept(ModItems.PARCHED_EGG.get());
+                    output.accept(ModItems.MOURNER_EGG.get());
                 }).build());
     }
 }

@@ -7,8 +7,10 @@
  "item.ancientsand.ancient_dagger": "Daga",
  "item.ancientsand.chamber_key": "Llave de la cámara",
  "item.ancientsand.royal_key": "Llave real",
- "item.ancientsand.lost_spawn_egg": "Generar perder",
- "entity.ancientsand.lost": "Perder",
+ "item.ancientsand.parched_spawn_egg": "Generar tostado",
+ "item.ancientsand.mourner_spawn_egg": "Generar plañidero",
+ "entity.ancientsand.parched": "Tostado",
+ "entity.ancientsand.mourner": "Plañidero",
 
  "block.ancientsand.remnant_block": "Bloque remanente",
  "block.ancientsand.remnant_stairs": "Escaleras remanentes",

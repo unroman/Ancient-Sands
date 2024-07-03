@@ -16,7 +16,8 @@ public class ModItems {
     public static RegistryObject<Item> ANCIENT_NUGGET;
     public static RegistryObject<Item> CHAMBER_KEY;
     public static RegistryObject<Item> ROYAL_KEY;
-    public static RegistryObject<Item> PRIEST_EGG;
+    public static RegistryObject<Item> PARCHED_EGG;
+    public static RegistryObject<Item> MOURNER_EGG;
 
     public static void setup() {
         ANCIENT_SWORD = register(() -> new SwordItem(ModTiers.ANCIENT, 3, -2.4f, new Item.Properties()), "ancient_sword");
@@ -25,8 +26,8 @@ public class ModItems {
         ANCIENT_NUGGET = register(() -> new Item(new Item.Properties()), "ancient_nugget");
         CHAMBER_KEY = register(() -> new Item(new Item.Properties()), "chamber_key");
         ROYAL_KEY = register(() -> new Item(new Item.Properties()), "royal_key");
-        PRIEST_EGG = register(() -> new ForgeSpawnEggItem(ModEntities.LOST, 15125652,7958625 , new Item.Properties()), "lost_spawn_egg");
-
+        PARCHED_EGG = register(() -> new ForgeSpawnEggItem(ModEntities.PARCHED, 15125652,7958625 , new Item.Properties()), "parched_spawn_egg");
+        MOURNER_EGG = register(() -> new ForgeSpawnEggItem(ModEntities.MOURNER, 15125652,8855049 , new Item.Properties()), "mourner_spawn_egg");
     }
 
     public static RegistryObject<Item> register(Supplier<Item> builder, String name) {

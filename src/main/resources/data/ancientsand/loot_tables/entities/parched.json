@@ -29,7 +29,7 @@
           "condition": "minecraft:killed_by_player"
         },
         {
-          "chance": 0.04,
+          "chance": 0.02,
           "condition": "minecraft:random_chance_with_looting",
           "looting_multiplier": 0.01
         }
@@ -49,7 +49,7 @@
           "condition": "minecraft:killed_by_player"
         },
         {
-          "chance": 0.12,
+          "chance": 0.15,
           "condition": "minecraft:random_chance_with_looting",
           "looting_multiplier": 0.01
         }

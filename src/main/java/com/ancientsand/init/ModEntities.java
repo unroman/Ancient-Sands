@@ -1,34 +1,36 @@
 package com.ancientsand.init;
 
 import com.ancientsand.AncientMod;
-import com.ancientsand.content.Lost;
-import com.ancientsand.content.LostModel;
-import com.ancientsand.content.LostRenderer;
+import com.ancientsand.content.*;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.monster.Monster;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.registries.RegistryObject;
 
 public class ModEntities {
-    public static RegistryObject<EntityType<Lost>> LOST;
+    public static RegistryObject<EntityType<Parched>> PARCHED;
+    public static RegistryObject<EntityType<Mourner>> MOURNER;
     public static void setup() {
-        LOST = AncientMod.ENTITY.register("lost", () -> EntityType.Builder.of(Lost::new, MobCategory.MONSTER).sized(0.6F, 1.99F).clientTrackingRange(8).build("lost"));
-
+        PARCHED = AncientMod.ENTITY.register("parched", () -> EntityType.Builder.of(Parched::new, MobCategory.MONSTER).sized(0.6F, 1.99F).clientTrackingRange(8).build("parched"));
+        MOURNER = AncientMod.ENTITY.register("mourner", () -> EntityType.Builder.of(Mourner::new, MobCategory.MONSTER).sized(0.6F, 1.99F).clientTrackingRange(8).build("mourner"));
     }
 
     public static void attributes(EntityAttributeCreationEvent event) {
-        event.put(ModEntities.LOST.get(), Lost.create().build());
+        event.put(ModEntities.PARCHED.get(), Monster.createMonsterAttributes().add(Attributes.MOVEMENT_SPEED, 0.2D).add(Attributes.KNOCKBACK_RESISTANCE, 0.1).build());
+        event.put(ModEntities.MOURNER.get(), Monster.createMonsterAttributes().add(Attributes.MOVEMENT_SPEED, 0.2D).build());
     }
 
     public static void renderers(EntityRenderersEvent.RegisterRenderers event) {
-        event.registerEntityRenderer(ModEntities.LOST.get(), LostRenderer::new);
+        event.registerEntityRenderer(ModEntities.PARCHED.get(), ParchedRenderer::new);
+        event.registerEntityRenderer(ModEntities.MOURNER.get(), MournerRenderer::new);
     }
 
     public static void layers(EntityRenderersEvent.RegisterLayerDefinitions event) {
-        event.registerLayerDefinition(ModLayers.LOST, LostModel::createBodyLayer);
+        event.registerLayerDefinition(ModLayers.PARCHED, ParchedModel::createBodyLayer);
+        event.registerLayerDefinition(ModLayers.MOURNER, MournerModel::createBodyLayer);
     }
 
 }

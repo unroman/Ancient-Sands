@@ -3,45 +3,57 @@ package com.ancientsand.content;
 import com.ancientsand.init.ModItems;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.ai.goal.*;
+import net.minecraft.world.entity.ai.goal.FloatGoal;
+import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
+import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
+import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.animal.IronGolem;
-import net.minecraft.world.entity.animal.Turtle;
-import net.minecraft.world.entity.animal.Wolf;
 import net.minecraft.world.entity.monster.AbstractSkeleton;
-import net.minecraft.world.entity.monster.Creeper;
-import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 
-public class Lost extends AbstractSkeleton {
-    public Lost(EntityType<? extends AbstractSkeleton> p_32133_, Level p_32134_) {
+public class Parched extends AbstractSkeleton {
+    public Parched(EntityType<? extends AbstractSkeleton> p_32133_, Level p_32134_) {
         super(p_32133_, p_32134_);
     }
     protected void populateDefaultEquipmentSlots(RandomSource p_218949_, DifficultyInstance p_218950_) {
         super.populateDefaultEquipmentSlots(p_218949_, p_218950_);
         this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(ModItems.ANCIENT_SWORD.get()));
     }
+
     protected void registerGoals() {
-        this.goalSelector.addGoal(3, new AvoidEntityGoal<>(this, Wolf.class, 6.0F, 1.0D, 1.2D));
+        this.goalSelector.addGoal(0, new FloatGoal(this));
         this.goalSelector.addGoal(5, new WaterAvoidingRandomStrollGoal(this, 1.0D));
         this.goalSelector.addGoal(6, new LookAtPlayerGoal(this, Player.class, 8.0F));
         this.goalSelector.addGoal(6, new RandomLookAroundGoal(this));
         this.targetSelector.addGoal(1, new HurtByTargetGoal(this));
         this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Player.class, true));
         this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, IronGolem.class, true));
-        this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, Turtle.class, 10, true, false, Turtle.BABY_ON_LAND_SELECTOR));
+    }
+
+    public boolean doHurtTarget(Entity p_21372_) {
+        float f1 = (float)this.getAttributeValue(Attributes.ATTACK_KNOCKBACK);
+        boolean flag = p_21372_.hurt(this.damageSources().mobAttack(this), 2.5f);
+        if (flag) {
+            if (f1 > 0.0F && p_21372_ instanceof LivingEntity) {
+                ((LivingEntity)p_21372_).knockback((double)(f1 * 0.5F), (double) Mth.sin(this.getYRot() * ((float)Math.PI / 180F)), (double)(-Mth.cos(this.getYRot() * ((float)Math.PI / 180F))));
+                this.setDeltaMovement(this.getDeltaMovement().multiply(0.6D, 1.0D, 0.6D));
+            }
+            this.setLastHurtMob(p_21372_);
+        }
+        return flag;
     }
 
     protected SoundEvent getAmbientSound() {
@@ -61,20 +73,12 @@ public class Lost extends AbstractSkeleton {
     }
 
     protected boolean isSunBurnTick() {return false;}
-    public static AttributeSupplier.Builder create() {
-        return Monster.createMonsterAttributes().add(Attributes.MOVEMENT_SPEED, 0.2D);
+
+    @Override
+    protected float getEquipmentDropChance(EquipmentSlot p_21520_) {
+        return 0.0f;
     }
 
-    protected void dropCustomDeathLoot(DamageSource p_33574_, int p_33575_, boolean p_33576_) {
-        super.dropCustomDeathLoot(p_33574_, p_33575_, p_33576_);
-        Entity entity = p_33574_.getEntity();
-        if (entity instanceof Creeper creeper) {
-            if (creeper.canDropMobsSkull()) {
-                creeper.increaseDroppedSkulls();
-                this.spawnAtLocation(Items.SKELETON_SKULL);
-            }
-        }
-    }
     public boolean isShaking() {
         return false;
     }

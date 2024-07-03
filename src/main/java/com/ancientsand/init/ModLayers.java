@@ -5,7 +5,8 @@ import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.resources.ResourceLocation;
 
 public class ModLayers {
-    public static final ModelLayerLocation LOST = register("lost");
+    public static final ModelLayerLocation PARCHED = register("parched");
+    public static final ModelLayerLocation MOURNER = register("mourner");
 
     private static ModelLayerLocation register(String name) {
         return register(name, "main");

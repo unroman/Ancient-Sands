@@ -7,8 +7,10 @@
  "item.ancientsand.ancient_dagger": "Кинжал",
  "item.ancientsand.chamber_key": "Ключ хранилища",
  "item.ancientsand.royal_key": "Королевский ключ",
- "item.ancientsand.lost_spawn_egg": "Яйцо призыва забытого",
- "entity.ancientsand.lost": "Забытый",
+ "item.ancientsand.parched_spawn_egg": "Яйцо призыва пересохшего",
+ "item.ancientsand.mourner_spawn_egg": "Яйцо призыва cкорбящего",
+ "entity.ancientsand.parched": "Пересохший",
+ "entity.ancientsand.mourner": "Cкорбящий",
 
  "block.ancientsand.remnant_block": "Вековой блок",
  "block.ancientsand.remnant_stairs": "Ступеньки из векового блока",

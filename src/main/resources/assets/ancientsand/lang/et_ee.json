@@ -7,8 +7,10 @@
  "item.ancientsand.ancient_dagger": "Pistoda",
  "item.ancientsand.chamber_key": "Kambri võti",
  "item.ancientsand.royal_key": "Kuninglik võti",
- "item.ancientsand.lost_spawn_egg": "Kadunute sünnimuna",
- "entity.ancientsand.lost": "Kadunud",
+ "item.ancientsand.parched_spawn_egg": "Kuivanud sünnimuna",
+ "item.ancientsand.mourner_spawn_egg": "Leinaja sünnimuna",
+ "entity.ancientsand.parched": "Kuivanud",
+ "entity.ancientsand.mourner": "Leinaja",
 
  "block.ancientsand.remnant_block": "Vanutatud plokk",
  "block.ancientsand.remnant_stairs": "Vanutatud trepp",
