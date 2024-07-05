@@ -52,7 +52,6 @@ public class DaggerItem extends TieredItem implements Vanishable {
                 p_43276_.broadcastBreakEvent(EquipmentSlot.MAINHAND);
             });
         }
-
         return true;
     }
 

@@ -48,7 +48,7 @@ public class ChamberBlock extends Block {
                     itemstack.shrink(1);
                 }
                 level.playSound((Player)null, pos, SoundEvents.BARREL_OPEN, SoundSource.BLOCKS, 0.3F, 0.5F);
-                BlockState blockstate = this.open(state, level, pos);
+                this.open(state, level, pos);
                 level.addParticle(ParticleTypes.CAMPFIRE_COSY_SMOKE, pos.getX() + 0.5D, pos.getY() + 1D, pos.getZ() + 0.5D, 0f, 0.05f, 0f);
                 return InteractionResult.SUCCESS;
             }
@@ -56,10 +56,9 @@ public class ChamberBlock extends Block {
 
         return InteractionResult.PASS;
     }
-    public BlockState open(BlockState state, Level level, BlockPos pos) {
+    public void open(BlockState state, Level level, BlockPos pos) {
         state = state.cycle(OPEN);
         level.setBlock(pos, state, 3);
-        return state;
     }
     private void dropContent(Player player, Level level, BlockPos pos) {
         if (level != null && level.getServer() != null) {

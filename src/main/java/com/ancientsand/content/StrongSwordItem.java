@@ -5,9 +5,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.ai.targeting.TargetingConditions;
-import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
@@ -32,11 +30,11 @@ public class StrongSwordItem extends SwordItem {
                     if (target != null) {
                         target.hurt(player.damageSources().mobAttack(player), 11);
                         stack.hurtAndBreak(7, player, (p_43388_) -> {
-                            p_43388_.broadcastBreakEvent(entity.getUsedItemHand());
+                            p_43388_.broadcastBreakEvent(player.getUsedItemHand());
                         });
+                        player.sweepAttack();
                     }
                     player.getCooldowns().addCooldown(stack.getItem(), 40);
-                    player.stopUsingItem();
                 }
             }
         }

@@ -2,11 +2,7 @@ package com.ancientsand.content;
 
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.*;
-import net.minecraft.core.particles.DustParticleOptions;
 import net.minecraft.core.particles.SimpleParticleType;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
-
 
 public class FallParticle extends TextureSheetParticle {
     protected FallParticle(ClientLevel p_108323_, double p_108324_, double p_108325_, double p_108326_) {
@@ -20,7 +16,6 @@ public class FallParticle extends TextureSheetParticle {
     }
 
     public record Factory(SpriteSet spriteSet) implements ParticleProvider<SimpleParticleType> {
-
         @Override
         public Particle createParticle(SimpleParticleType particleType, ClientLevel level, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed) {
             FallParticle particle = new FallParticle(level, x, y, z);
@@ -28,9 +23,5 @@ public class FallParticle extends TextureSheetParticle {
             particle.pickSprite(this.spriteSet());
             return particle;
         }
-    }
-    public void tick() {
-        super.tick();
-        this.alpha = 0.3f;
     }
 }

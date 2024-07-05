@@ -16,6 +16,11 @@
         },
         {
           "type": "minecraft:item",
+          "name": "ancientsand:lyre",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
           "name": "ancientsand:ancient_ingot",
           "weight": 10
         },

@@ -26,6 +26,8 @@ import net.minecraft.world.level.levelgen.structure.templatesystem.BlockIgnorePr
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplateManager;
 
+import java.util.concurrent.ThreadLocalRandom;
+
 public class TombPieces {
     private static final ResourceLocation ENTRY_1 = new ResourceLocation(AncientMod.MODID, "entry_1");
     private static final ResourceLocation TUBE = new ResourceLocation(AncientMod.MODID, "tube");
@@ -44,16 +46,16 @@ public class TombPieces {
         pieceList.addPiece(new TombPieces.Piece(manager, ROOM, entry, rotation));
         pieceList.addPiece(new TombPieces.Piece(manager, random.nextInt(11) < 5 ? HALL_1 : HALL_2, entry.offset(-8, 0, 0), rotation));
         pieceList.addPiece(new TombPieces.Piece(manager, random.nextInt(11) < 5 ? HALL_1 : HALL_2, entry.offset(8, 0, -8), rotation.getRotated(Rotation.CLOCKWISE_90)));
-        if (random.nextInt(11) < 3 ) {
+        if (ThreadLocalRandom.current().nextInt(11) < 3 ) {
             pieceList.addPiece(new TombPieces.Piece(manager, HALL_1, entry.offset(-16, 0, 0), rotation));
         }
-        if (random.nextInt(11) < 3 ) {
+        if (ThreadLocalRandom.current().nextInt(11) < 3 ) {
             pieceList.addPiece(new TombPieces.Piece(manager, HALL_1, entry.offset(8, 0, -16), rotation.getRotated(Rotation.CLOCKWISE_90)));
         }
-        if (random.nextInt(11) < 5 ) {
+        if (ThreadLocalRandom.current().nextInt(11) < 5 ) {
             pieceList.addPiece(new TombPieces.Piece(manager, HALL_1, entry.offset(9, 0, 0), rotation));
             pieceList.addPiece(new TombPieces.Piece(manager, DOOR, entry.offset(17, 0, 0), rotation));
-            if (random.nextInt(11) < 6 ) {
+            if (ThreadLocalRandom.current().nextInt(11) < 6 ) {
                 pieceList.addPiece(new TombPieces.Piece(manager, STORAGE, entry.offset(21, 0, 0), rotation));
             } else {
                 pieceList.addPiece(new TombPieces.Piece(manager, THRONE, entry.offset(21, 0, -2), rotation));
@@ -61,7 +63,7 @@ public class TombPieces {
         } else {
             pieceList.addPiece(new TombPieces.Piece(manager, HALL_1, entry.offset(8, 0, 9), rotation.getRotated(Rotation.CLOCKWISE_90)));
             pieceList.addPiece(new TombPieces.Piece(manager, DOOR, entry.offset(8, 0, 17), rotation.getRotated(Rotation.CLOCKWISE_90)));
-            if (random.nextInt(11) < 6) {
+            if (ThreadLocalRandom.current().nextInt(11) < 6) {
                 pieceList.addPiece(new TombPieces.Piece(manager, STORAGE, entry.offset(8, 0, 21), rotation.getRotated(Rotation.CLOCKWISE_90)));
             } else {
                 pieceList.addPiece(new TombPieces.Piece(manager, THRONE, entry.offset(10, 0, 21), rotation.getRotated(Rotation.CLOCKWISE_90)));
@@ -71,10 +73,10 @@ public class TombPieces {
 
     public static class Piece extends TemplateStructurePiece {
         public Piece(StructureTemplateManager p_228540_, ResourceLocation p_228541_, BlockPos p_228542_, Rotation p_228543_) {
-            super(ModPieces.TOMB_PIECE, 0, p_228540_, p_228541_, p_228541_.toString(), makeSettings(p_228543_), p_228542_);
+            super(ModPieces.TOMB_PIECE.get(), 0, p_228540_, p_228541_, p_228541_.toString(), makeSettings(p_228543_), p_228542_);
         }
         public Piece(StructurePieceSerializationContext p_228545_, CompoundTag p_228546_) {
-            super(ModPieces.TOMB_PIECE, p_228546_, p_228545_.structureTemplateManager(), (p_228568_) -> {
+            super(ModPieces.TOMB_PIECE.get(), p_228546_, p_228545_.structureTemplateManager(), (p_228568_) -> {
                 return makeSettings(Rotation.valueOf(p_228546_.getString("Rot")));
             });
         }
@@ -86,7 +88,7 @@ public class TombPieces {
                 if (worldIn.getBlockState(blockpos).getBlock() == ModBlocks.REMNANT_BLOCK.get()) {
                     if (!worldIn.isEmptyBlock(blockpos.below()) && worldIn.isEmptyBlock(blockpos.above())) {
                         worldIn.setBlock(blockpos, Blocks.SAND.defaultBlockState(), 2);
-                        if (rand.nextInt(4) == 1) {
+                        if (ThreadLocalRandom.current().nextInt(4) == 1) {
                             worldIn.setBlock(blockpos.above(), Blocks.DEAD_BUSH.defaultBlockState(), 2);
                         }
                     } else if (worldIn.isEmptyBlock(blockpos.above())) {
@@ -107,7 +109,7 @@ public class TombPieces {
 
         protected void handleDataMarker(String function, BlockPos pos, ServerLevelAccessor worldIn, RandomSource rand, BoundingBox sbb) {
             if (function.startsWith("Chamber")) {
-                if (rand.nextInt(12) == 10) {
+                if (ThreadLocalRandom.current().nextInt(12) == 10) {
                     worldIn.setBlock(pos, ModBlocks.ROYAL_CHAMBER.get().defaultBlockState(), 2);
                 } else {
                     worldIn.setBlock(pos, ModBlocks.COMMON_CHAMBER.get().defaultBlockState(), 2);
@@ -116,7 +118,7 @@ public class TombPieces {
                 worldIn.setBlock(pos, Blocks.SPAWNER.defaultBlockState(), 2);
                 BlockEntity blockentity = worldIn.getBlockEntity(pos);
                 if (blockentity instanceof SpawnerBlockEntity spawnerblockentity) {
-                    if (rand.nextInt(6) == 1) {
+                    if (ThreadLocalRandom.current().nextInt(6) == 1) {
                         spawnerblockentity.setEntityId(ModEntities.MOURNER.get(), rand);
                     } else {
                         spawnerblockentity.setEntityId(ModEntities.PARCHED.get(), rand);

@@ -1,12 +1,13 @@
 {
- "itemGroup.sandgroup": "Давні пустелі",
+ "itemGroup.sandgroup": "Стародавні пустелі",
 
- "item.ancientsand.ancient_ingot": "Злиток давнього металу",
- "item.ancientsand.ancient_nugget": "Самородок давнього металу",
- "item.ancientsand.ancient_sword": "Давній меч",
+ "item.ancientsand.ancient_ingot": "Злиток стародавнього металу",
+ "item.ancientsand.ancient_nugget": "Самородок стародавнього металу",
+ "item.ancientsand.ancient_sword": "Стародавній меч",
  "item.ancientsand.ancient_dagger": "Кинжал",
  "item.ancientsand.chamber_key": "Ключ сховища",
  "item.ancientsand.royal_key": "Королівський ключ",
+ "item.ancientsand.lyre": "Ліра",
  "item.ancientsand.parched_spawn_egg": "Яйце виклику пересохлого",
  "item.ancientsand.mourner_spawn_egg": "Яйце виклику скорботного",
  "entity.ancientsand.parched": "Пересохлий",
@@ -16,8 +17,13 @@
  "block.ancientsand.remnant_block": "Віковий блок",
  "block.ancientsand.remnant_stairs": "Сходи з вікового блоку",
  "block.ancientsand.remnant_slab": "Плита з вікового блоку",
- "block.ancientsand.ancient_block": "Блок давнього металу",
+ "block.ancientsand.ancient_block": "Блок стародавнього металу",
  "block.ancientsand.chamber": "Звичайне сховище",
  "block.ancientsand.royal_chamber": "Королівське сховище",
- "block.ancientsand.royal_carpet": "Королівський килим"
+ "block.ancientsand.royal_carpet": "Королівський килим",
+
+ "advancements.ancientsand.khopesh.title": "Криві мечі",
+ "advancements.ancientsand.khopesh.description": "Знайдіть стародавній меч у сховищі",
+ "advancements.ancientsand.royal_carpet.title": "Заверніть!",
+ "advancements.ancientsand.royal_carpet.description": "Знайдіть королівський килим у тронному залі"
 }

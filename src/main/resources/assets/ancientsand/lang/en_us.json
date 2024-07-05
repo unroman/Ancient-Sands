@@ -7,6 +7,7 @@
  "item.ancientsand.ancient_dagger": "Dagger",
  "item.ancientsand.chamber_key": "Chamber Key",
  "item.ancientsand.royal_key": "Royal Key",
+ "item.ancientsand.lyre": "Lyre",
  "item.ancientsand.parched_spawn_egg": "Parched Spawn Egg",
  "item.ancientsand.mourner_spawn_egg": "Mourner Spawn Egg",
  "entity.ancientsand.parched": "Parched",
@@ -19,5 +20,10 @@
  "block.ancientsand.ancient_block": "Block of Ancient Metal",
  "block.ancientsand.chamber": "Ordinary Chamber",
  "block.ancientsand.royal_chamber": "Royal Chamber",
- "block.ancientsand.royal_carpet": "Royal Carpet"
+ "block.ancientsand.royal_carpet": "Royal Carpet",
+
+ "advancements.ancientsand.khopesh.title": "Like an Egyptian",
+ "advancements.ancientsand.khopesh.description": "Find an Ancient Sword in a chamber",
+ "advancements.ancientsand.royal_carpet.title": "Wrap In!",
+ "advancements.ancientsand.royal_carpet.description": "Find a Royal Carpet in a throne room"
 }

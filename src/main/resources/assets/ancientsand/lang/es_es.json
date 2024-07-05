@@ -7,6 +7,7 @@
  "item.ancientsand.ancient_dagger": "Daga",
  "item.ancientsand.chamber_key": "Llave de la cámara",
  "item.ancientsand.royal_key": "Llave real",
+ "item.ancientsand.lyre": "Lira",
  "item.ancientsand.parched_spawn_egg": "Generar tostado",
  "item.ancientsand.mourner_spawn_egg": "Generar plañidero",
  "entity.ancientsand.parched": "Tostado",
@@ -19,5 +20,10 @@
  "block.ancientsand.ancient_block": "Bloque de metal antiguo",
  "block.ancientsand.chamber": "Cámara ordinaria",
  "block.ancientsand.royal_chamber": "Cámara real",
- "block.ancientsand.royal_carpet": "Capa real"
+ "block.ancientsand.royal_carpet": "Capa real",
+
+ "advancements.ancientsand.khopesh.title": "Como un egipcio",
+ "advancements.ancientsand.khopesh.description": "Encuentra una espada antigua en una cámara.",
+ "advancements.ancientsand.royal_carpet.title": "Envuelvelo!",
+ "advancements.ancientsand.royal_carpet.description": "Encuentra una capa real en una sala del trono."
 }

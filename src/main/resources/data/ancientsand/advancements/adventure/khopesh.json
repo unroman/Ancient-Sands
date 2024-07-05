@@ -1,0 +1,36 @@
+{
+  "parent": "minecraft:adventure/root",
+  "display":{
+    "icon":{
+      "item": "ancientsand:ancient_sword"
+    },
+    "title":{
+      "translate":"advancements.ancientsand.khopesh.title"
+    },
+    "description":{
+      "translate":"advancements.ancientsand.khopesh.description"
+    },
+    "show_toast":true,
+    "announce_to_chat":false,
+    "hidden":true
+  },
+  "criteria":{
+    "ancient_sword":{
+      "conditions":{
+        "items":[
+          {
+            "items":[
+              "ancientsand:ancient_sword"
+            ]
+          }
+        ]
+      },
+      "trigger":"minecraft:inventory_changed"
+    }
+  },
+  "requirements":[
+    [
+      "ancient_sword"
+    ]
+  ]
+}

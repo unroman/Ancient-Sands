@@ -10,8 +10,8 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 
 public class ModTypes {
-    public static final DeferredRegister<StructureType<?>> REGISTRY = DeferredRegister.create(Registries.STRUCTURE_TYPE, AncientMod.MODID);
-    public static final RegistryObject<StructureType<TombStructure>> TOMB_TYPE = REGISTRY.register("tomb", () -> stuff(TombStructure.CODEC));
+    public static final DeferredRegister<StructureType<?>> TYPE = DeferredRegister.create(Registries.STRUCTURE_TYPE, AncientMod.MODID);
+    public static final RegistryObject<StructureType<TombStructure>> TOMB_TYPE = TYPE.register("tomb", () -> stuff(TombStructure.CODEC));
 
     private static <T extends Structure> StructureType<T> stuff(Codec<T> codec) {
         return () -> codec;

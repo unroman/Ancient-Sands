@@ -7,6 +7,7 @@
  "item.ancientsand.ancient_dagger": "Pistoda",
  "item.ancientsand.chamber_key": "Kambri võti",
  "item.ancientsand.royal_key": "Kuninglik võti",
+ "item.ancientsand.lyre": "Lüüra",
  "item.ancientsand.parched_spawn_egg": "Kuivanud sünnimuna",
  "item.ancientsand.mourner_spawn_egg": "Leinaja sünnimuna",
  "entity.ancientsand.parched": "Kuivanud",
@@ -19,5 +20,10 @@
  "block.ancientsand.ancient_block": "Iidne metalliplokk",
  "block.ancientsand.chamber": "Tavaline kamber",
  "block.ancientsand.royal_chamber": "Kuninglik kamber",
- "block.ancientsand.royal_carpet": "Kuninglik vaip"
+ "block.ancientsand.royal_carpet": "Kuninglik vaip",
+
+ "advancements.ancientsand.khopesh.title": "Nagu egiptlane",
+ "advancements.ancientsand.khopesh.description": "Leidke kambrist iidne mõõk",
+ "advancements.ancientsand.royal_carpet.title": "Mähi sisse!",
+ "advancements.ancientsand.royal_carpet.description": "Leidke trooniruumist kuninglik vaip"
 }
