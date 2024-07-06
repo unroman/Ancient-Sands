@@ -12,7 +12,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 @OnlyIn(Dist.CLIENT)
 public class MournerRenderer extends HumanoidMobRenderer<Mourner, MournerModel<Mourner>> {
-    private static final ResourceLocation MOURNER_LOCATION = new ResourceLocation(AncientMod.MODID, "textures/entity/mourner.png");
+    private static final ResourceLocation MOURNER_LOCATION = ResourceLocation.fromNamespaceAndPath(AncientMod.MODID, "textures/entity/mourner.png");
 
     public MournerRenderer(EntityRendererProvider.Context p_174380_) {
         this(p_174380_, ModLayers.MOURNER, ModelLayers.SKELETON_INNER_ARMOR, ModelLayers.SKELETON_OUTER_ARMOR);

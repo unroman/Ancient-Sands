@@ -2,8 +2,10 @@ package com.ancientsand.content;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.targeting.TargetingConditions;
 import net.minecraft.world.entity.player.Player;
@@ -12,30 +14,25 @@ import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-import javax.annotation.Nullable;
 import java.util.List;
 
 public class StrongSwordItem extends SwordItem {
-
-    public StrongSwordItem(Tier p_43269_, int p_43270_, float p_43271_, Properties p_43272_) {
-        super(p_43269_, p_43270_, p_43271_, p_43272_);
+    public StrongSwordItem(Tier p_43269_, Properties p_43272_) {
+        super(p_43269_, p_43272_);
     }
 
+    @Override
     public void releaseUsing(ItemStack stack, Level level, LivingEntity entity, int p_40670_) {
         if (entity instanceof Player player) {
-            int i = this.getUseDuration(stack) - p_40670_;
+            int i = this.getUseDuration(stack, entity) - p_40670_;
             if (i >= 22) {
-                if (!level.isClientSide) {
-                    LivingEntity target = level.getNearestEntity(LivingEntity.class, TargetingConditions.forCombat().range(3.0D), player, player.getX(), player.getY(), player.getZ(), player.getBoundingBox().inflate(4.0D, 2.0D, 4.0D));
-                    if (target != null) {
-                        target.hurt(player.damageSources().mobAttack(player), 11);
-                        stack.hurtAndBreak(7, player, (p_43388_) -> {
-                            p_43388_.broadcastBreakEvent(player.getUsedItemHand());
-                        });
-                        player.sweepAttack();
-                    }
-                    player.getCooldowns().addCooldown(stack.getItem(), 40);
+                LivingEntity target = level.getNearestEntity(LivingEntity.class, TargetingConditions.forCombat().range(3.5D), player, player.getX(), player.getY(), player.getZ(), player.getBoundingBox().inflate(4.0D, 2.0D, 4.0D));
+                if (target != null) {
+                    target.hurt(player.damageSources().mobAttack(player), 11);
+                    stack.hurtAndBreak(3, player, EquipmentSlot.MAINHAND);
                 }
+                player.getCooldowns().addCooldown(stack.getItem(), 40);
+                level.playSound(player, player.blockPosition(), SoundEvents.PLAYER_ATTACK_SWEEP, player.getSoundSource(),1.0f, 1.0f);
             }
         }
     }
@@ -46,16 +43,18 @@ public class StrongSwordItem extends SwordItem {
         return InteractionResultHolder.consume(itemstack);
     }
 
-    public int getUseDuration(ItemStack p_40680_) {
+    @Override
+    public int getUseDuration(ItemStack p_43419_, LivingEntity p_344216_) {
         return 72000;
     }
 
-    public UseAnim getUseAnimation(ItemStack p_40678_) {
+    @Override
+    public UseAnim getUseAnimation(ItemStack p_43417_) {
         return UseAnim.SPEAR;
     }
 
     @OnlyIn(Dist.CLIENT)
-    public void appendHoverText(ItemStack stack, @Nullable Level world, List<Component> tooltip, TooltipFlag flag) {
+    public void appendHoverText(ItemStack stack, Item.TooltipContext text, List<Component> tooltip, TooltipFlag flag) {
         tooltip.add(Component.translatable("tooltip.ancient_sword").withStyle(ChatFormatting.GRAY));
     }
 }

@@ -7,10 +7,11 @@
   ],
   "key": {
     "#": {
-      "item": "ancientsand:ancient_ingot"
+      "item": "ancientsand:ancient_nugget"
     }
   },
   "result": {
-    "item": "ancientsand:ancient_block"
+    "id": "ancientsand:ancient_ingot",
+    "count": 1
   }
 }

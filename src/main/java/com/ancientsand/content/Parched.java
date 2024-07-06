@@ -45,7 +45,7 @@ public class Parched extends AbstractSkeleton {
 
     public boolean doHurtTarget(Entity p_21372_) {
         float f1 = (float)this.getAttributeValue(Attributes.ATTACK_KNOCKBACK);
-        boolean flag = p_21372_.hurt(this.damageSources().mobAttack(this), 2.5f);
+        boolean flag = p_21372_.hurt(this.damageSources().mobAttack(this), 3f);
         if (flag) {
             if (f1 > 0.0F && p_21372_ instanceof LivingEntity) {
                 ((LivingEntity)p_21372_).knockback((double)(f1 * 0.5F), (double) Mth.sin(this.getYRot() * ((float)Math.PI / 180F)), (double)(-Mth.cos(this.getYRot() * ((float)Math.PI / 180F))));

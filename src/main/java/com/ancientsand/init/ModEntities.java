@@ -13,6 +13,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 
 public class ModEntities {
+
     public static final DeferredRegister<EntityType<?>> ENTITY = DeferredRegister.create(Registries.ENTITY_TYPE, AncientMod.MODID);
     public static RegistryObject<EntityType<Parched>> PARCHED = ENTITY.register("parched", () -> EntityType.Builder.of(Parched::new, MobCategory.MONSTER).sized(0.6F, 1.99F).clientTrackingRange(8).build("parched"));
     public static RegistryObject<EntityType<Mourner>> MOURNER = ENTITY.register("mourner", () -> EntityType.Builder.of(Mourner::new, MobCategory.MONSTER).sized(0.6F, 1.99F).clientTrackingRange(8).build("mourner"));

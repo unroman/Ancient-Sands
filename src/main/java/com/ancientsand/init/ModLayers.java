@@ -13,7 +13,7 @@ public class ModLayers {
     }
 
     private static ModelLayerLocation register(String name, String type) {
-        return register(new ResourceLocation(AncientMod.MODID, name), type);
+        return register(ResourceLocation.fromNamespaceAndPath(AncientMod.MODID, name), type);
     }
 
     private static ModelLayerLocation register(ResourceLocation location, String type) {

@@ -1,26 +1,27 @@
 {
-  "parent": "minecraft:adventure/root",
+  "parent": "ancientsand:adventure/khopesh",
   "display":{
     "icon":{
-      "item": "ancientsand:ancient_sword"
+      "count": 1,
+      "id": "ancientsand:royal_carpet"
     },
     "title":{
-      "translate":"advancements.ancientsand.khopesh.title"
+      "translate":"advancements.ancientsand.royal_carpet.title"
     },
     "description":{
-      "translate":"advancements.ancientsand.khopesh.description"
+      "translate":"advancements.ancientsand.royal_carpet.description"
     },
     "show_toast":true,
     "announce_to_chat":false,
     "hidden":true
   },
   "criteria":{
-    "ancient_sword":{
+    "royal_carpet":{
       "conditions":{
         "items":[
           {
             "items":[
-              "ancientsand:ancient_sword"
+              "ancientsand:royal_carpet"
             ]
           }
         ]
@@ -30,7 +31,7 @@
   },
   "requirements":[
     [
-      "ancient_sword"
+      "royal_carpet"
     ]
   ]
 }

@@ -1,0 +1,47 @@
+{
+  "type": "minecraft:archaeology",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:iron_nugget",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:gold_nugget",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "ancientsand:ancient_nugget",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "ancientsand:jug",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:bone",
+          "weight": 14
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:feather",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:gunpowder",
+          "weight": 9
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "minecraft:archaeology/desert_pyramid"
+}

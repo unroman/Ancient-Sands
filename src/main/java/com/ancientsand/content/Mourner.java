@@ -36,9 +36,9 @@ public class Mourner extends Monster {
         this.entityData.set(BLINDING, blinding);
     }
 
-    protected void defineSynchedData() {
-        super.defineSynchedData();
-        this.entityData.define(BLINDING, false);
+    protected void defineSynchedData(SynchedEntityData.Builder p_335149_) {
+        super.defineSynchedData(p_335149_);
+        p_335149_.define(BLINDING, false);
     }
 
     public void tick() {
@@ -84,10 +84,6 @@ public class Mourner extends Monster {
     @Override
     protected float getEquipmentDropChance(EquipmentSlot p_21520_) {
         return 0.0f;
-    }
-
-    protected float getStandingEyeHeight(Pose p_32154_, EntityDimensions p_32155_) {
-        return 1.74F;
     }
 
     protected class SpellcasterUseSpellGoal extends Goal {

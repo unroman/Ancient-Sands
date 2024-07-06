@@ -9,5 +9,6 @@ import net.minecraftforge.registries.RegistryObject;
 
 public class ModSounds {
     public static final DeferredRegister<SoundEvent> SOUND = DeferredRegister.create(Registries.SOUND_EVENT, AncientMod.MODID);
-    public static RegistryObject<SoundEvent> LYRE = SOUND.register( "lyre_play", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(AncientMod.MODID, "lyre_play")));
+    public static RegistryObject<SoundEvent> LYRE = SOUND.register( "lyre_play", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(AncientMod.MODID, "lyre_play")));
 }
+

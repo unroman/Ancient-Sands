@@ -13,7 +13,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 @OnlyIn(Dist.CLIENT)
 public class ParchedRenderer extends HumanoidMobRenderer<AbstractSkeleton, ParchedModel<AbstractSkeleton>> {
-    private static final ResourceLocation LOST_LOCATION = new ResourceLocation(AncientMod.MODID, "textures/entity/parched.png");
+    private static final ResourceLocation LOST_LOCATION = ResourceLocation.fromNamespaceAndPath(AncientMod.MODID, "textures/entity/parched.png");
 
     public ParchedRenderer(EntityRendererProvider.Context p_174380_) {
         this(p_174380_, ModLayers.PARCHED, ModelLayers.SKELETON_INNER_ARMOR, ModelLayers.SKELETON_OUTER_ARMOR);
