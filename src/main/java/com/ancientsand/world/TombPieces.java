@@ -45,20 +45,47 @@ public class TombPieces {
         }
         pieceList.addPiece(new TombPieces.Piece(manager, TUBE, pos.offset(4, -5, 2), rotation));
         pieceList.addPiece(new TombPieces.Piece(manager, TUBE, pos.offset(4, -10, 2), rotation));
+
         BlockPos entry = pos.offset(2, -16, 0);
         pieceList.addPiece(new TombPieces.Piece(manager, ROOM, entry, rotation));
-        pieceList.addPiece(new TombPieces.Piece(manager, random.nextInt(10) < 5 ? HALL_1 : HALL_2, entry.offset(-8, 0, 0), rotation));
-        pieceList.addPiece(new TombPieces.Piece(manager, random.nextInt(10) < 5 ? HALL_1 : HALL_2, entry.offset(8, 0, -8), rotation.getRotated(Rotation.CLOCKWISE_90)));
-        if (random.nextInt(10) < 3 ) {
-            pieceList.addPiece(new TombPieces.Piece(manager, HALL_1, entry.offset(-16, 0, 0), rotation));
-            if (random.nextInt(10) < 6 ) {
-                pieceList.addPiece(new TombPieces.Piece(manager, random.nextInt(10) < 5 ? HALL_1 : HALL_2, entry.offset(-24, 0, 0), rotation));
+        pieceList.addPiece(new TombPieces.Piece(manager, random.nextInt(10) < 6 ? HALL_1 : HALL_2, entry.offset(-8, 0, 0), rotation));
+        pieceList.addPiece(new TombPieces.Piece(manager, HALL_1, entry.offset(8, 0, -8), rotation.getRotated(Rotation.CLOCKWISE_90)));
+
+        if (random.nextInt(10) < 5) {
+            if (random.nextInt(10) < 5) {
+                pieceList.addPiece(new TombPieces.Piece(manager, HALL_2, entry.offset(-16, 0, 0), rotation));
+            } else {
+                pieceList.addPiece(new TombPieces.Piece(manager, HALL_1, entry.offset(-16, 0, 0), rotation));
+                pieceList.addPiece(new TombPieces.Piece(manager, TUBE, entry.offset(-14, -4, 2), rotation));
+                BlockPos layer = entry.offset(-16, -10, 0);
+                pieceList.addPiece(new TombPieces.Piece(manager, ROOM, layer, rotation));
+                pieceList.addPiece(new TombPieces.Piece(manager, HALL_1, layer.offset(-8, 0, 0), rotation));
+                pieceList.addPiece(new TombPieces.Piece(manager, HALL_1, layer.offset(8, 0, -8), rotation.getRotated(Rotation.CLOCKWISE_90)));
+                if (random.nextInt(10) < 5 ) {
+                    pieceList.addPiece(new TombPieces.Piece(manager, HALL_2, layer.offset(-16, 0, 0), rotation));
+                } else {
+                    pieceList.addPiece(new TombPieces.Piece(manager, HALL_2, layer.offset(8, 0, -16), rotation.getRotated(Rotation.CLOCKWISE_90)));
+                }
+            }
+        } else {
+            if (random.nextInt(10) < 5) {
+                pieceList.addPiece(new TombPieces.Piece(manager, HALL_2, entry.offset(8, 0, -16), rotation.getRotated(Rotation.CLOCKWISE_90)));
+            } else  {
+                pieceList.addPiece(new TombPieces.Piece(manager, HALL_1, entry.offset(8, 0, -16), rotation.getRotated(Rotation.CLOCKWISE_90)));
+                pieceList.addPiece(new TombPieces.Piece(manager, TUBE, entry.offset(6, -4, -14), rotation.getRotated(Rotation.CLOCKWISE_90)));
+                BlockPos layer = entry.offset(0, -10, -16);
+                pieceList.addPiece(new TombPieces.Piece(manager, ROOM, layer, rotation));
+                pieceList.addPiece(new TombPieces.Piece(manager, HALL_1, layer.offset(-8, 0, 0), rotation));
+                pieceList.addPiece(new TombPieces.Piece(manager, HALL_1, layer.offset(8, 0, -8), rotation.getRotated(Rotation.CLOCKWISE_90)));
+                if (random.nextInt(10) < 5) {
+                    pieceList.addPiece(new TombPieces.Piece(manager, HALL_2, layer.offset(-16, 0, 0), rotation));
+                } else {
+                    pieceList.addPiece(new TombPieces.Piece(manager, HALL_2, layer.offset(8, 0, -16), rotation.getRotated(Rotation.CLOCKWISE_90)));
+                }
             }
         }
-        if (random.nextInt(10) < 3 ) {
-            pieceList.addPiece(new TombPieces.Piece(manager, HALL_1, entry.offset(8, 0, -16), rotation.getRotated(Rotation.CLOCKWISE_90)));
-        }
-        if (random.nextInt(10) < 4 ) {
+
+        if (random.nextInt(10) < 5 ) {
             pieceList.addPiece(new TombPieces.Piece(manager, HALL_1, entry.offset(9, 0, 0), rotation));
             pieceList.addPiece(new TombPieces.Piece(manager, DOOR, entry.offset(17, 0, 0), rotation));
             if (random.nextInt(10) < 5 ) {
@@ -69,7 +96,7 @@ public class TombPieces {
         } else {
             pieceList.addPiece(new TombPieces.Piece(manager, HALL_1, entry.offset(8, 0, 9), rotation.getRotated(Rotation.CLOCKWISE_90)));
             pieceList.addPiece(new TombPieces.Piece(manager, DOOR, entry.offset(8, 0, 17), rotation.getRotated(Rotation.CLOCKWISE_90)));
-            if (random.nextInt(10) < 6) {
+            if (random.nextInt(10) < 5) {
                 pieceList.addPiece(new TombPieces.Piece(manager, STORAGE, entry.offset(8, 0, 21), rotation.getRotated(Rotation.CLOCKWISE_90)));
             } else {
                 pieceList.addPiece(new TombPieces.Piece(manager, THRONE, entry.offset(10, 0, 21), rotation.getRotated(Rotation.CLOCKWISE_90)));
@@ -87,7 +114,7 @@ public class TombPieces {
 
         public void postProcess(WorldGenLevel worldIn, StructureManager p_229138_, ChunkGenerator p_229139_, RandomSource random, BoundingBox p_229141_, ChunkPos p_229142_, BlockPos pos) {
             super.postProcess(worldIn, p_229138_, p_229139_, random, p_229141_, p_229142_, pos);
-            for (int d = 0; d < 5; ++d) {
+            for (int d = 0; d < 3; ++d) {
                 BlockPos blockpos = pos.offset(random.nextInt(-9, 7), random.nextInt(-16, -10), random.nextInt(-9, 7));
                 if (worldIn.getBlockState(blockpos).getBlock() == ModBlocks.REMNANT_BLOCK.get()) {
                     if (!worldIn.isEmptyBlock(blockpos.below()) && worldIn.isEmptyBlock(blockpos.above())) {
@@ -95,8 +122,8 @@ public class TombPieces {
                         if (random.nextInt(4) == 1) {
                             worldIn.setBlock(blockpos.above(), Blocks.DEAD_BUSH.defaultBlockState(), 2);
                         }
-                    } else if (worldIn.isEmptyBlock(blockpos.above())) {
-                        worldIn.setBlock(blockpos, ModBlocks.REMNANT_SLAB.get().defaultBlockState(), 2);
+                    } else {
+                        worldIn.setBlock(blockpos, Blocks.SANDSTONE.defaultBlockState(), 2);
                     }
                 }
             }

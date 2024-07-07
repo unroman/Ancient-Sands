@@ -3,25 +3,25 @@
   "display":{
     "icon":{
       "count": 1,
-      "id": "ancientsand:ancient_sword"
+      "id": "ancientsand:jug"
     },
     "title":{
-      "translate":"advancements.ancientsand.khopesh.title"
+      "translate":"advancements.ancientsand.jug.title"
     },
     "description":{
-      "translate":"advancements.ancientsand.khopesh.description"
+      "translate":"advancements.ancientsand.jug.description"
     },
     "show_toast":true,
     "announce_to_chat":false,
     "hidden":true
   },
   "criteria":{
-    "ancient_sword":{
+    "jug":{
       "conditions":{
         "items":[
           {
             "items":[
-              "ancientsand:ancient_sword"
+              "ancientsand:jug"
             ]
           }
         ]
@@ -31,7 +31,7 @@
   },
   "requirements":[
     [
-      "ancient_sword"
+      "jug"
     ]
   ]
 }
