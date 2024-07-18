@@ -19,7 +19,7 @@ public class ModEntities {
     public static RegistryObject<EntityType<Mourner>> MOURNER = ENTITY.register("mourner", () -> EntityType.Builder.of(Mourner::new, MobCategory.MONSTER).sized(0.6F, 1.99F).clientTrackingRange(8).build("mourner"));
 
     public static void attributes(EntityAttributeCreationEvent event) {
-        event.put(ModEntities.PARCHED.get(), Monster.createMonsterAttributes().add(Attributes.MOVEMENT_SPEED, 0.2D).add(Attributes.KNOCKBACK_RESISTANCE, 0.1).build());
+        event.put(ModEntities.PARCHED.get(), Monster.createMonsterAttributes().add(Attributes.MOVEMENT_SPEED, 0.2D).add(Attributes.KNOCKBACK_RESISTANCE, 0.1).add(Attributes.ATTACK_SPEED, -2).build());
         event.put(ModEntities.MOURNER.get(), Monster.createMonsterAttributes().add(Attributes.MOVEMENT_SPEED, 0.2D).build());
     }
 

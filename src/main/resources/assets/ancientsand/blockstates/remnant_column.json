@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "axis=y":  { "model": "ancientsand:block/remnant_column" },
+        "axis=z":   { "model": "ancientsand:block/remnant_column", "x": 90 },
+        "axis=x":   { "model": "ancientsand:block/remnant_column", "x": 90, "y": 90 }
+    }
+} 

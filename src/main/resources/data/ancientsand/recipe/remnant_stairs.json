@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "ancientsand:remnant_block"
+    }
+  },
+  "result": {
+    "id": "ancientsand:remnant_stairs",
+    "count": 4
+  }
+}
