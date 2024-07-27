@@ -20,8 +20,8 @@ public class MournerModel<T extends Mourner> extends HumanoidModel<T> {
         MeshDefinition meshdefinition = HumanoidModel.createMesh(CubeDeformation.NONE, 0.0F);
         PartDefinition partdefinition = meshdefinition.getRoot();
         partdefinition.addOrReplaceChild("head", CubeListBuilder.create().texOffs(0, 0).addBox(-4.0F, -8.0F, -4.0F, 8.0F, 8.0F, 8.0F), PartPose.offset(0.0F, 0.0F, 0.0F))
-                .addOrReplaceChild("top", CubeListBuilder.create().texOffs(32, 0).addBox(-4.0F, -11.0F, -4.0F, 8.0F, 3.0F, 8.0F, CubeDeformation.NONE), PartPose.offset(0.0F, 0.0F, 0.0F))
-                .addOrReplaceChild("beard", CubeListBuilder.create().texOffs(48, 16).addBox(-1.0F, -2.9F, 0.3F, 2.0F, 3.0F, 2.0F, CubeDeformation.NONE), PartPose.offsetAndRotation(0.0F, 2.0F, -5.0F, -0.3491F, 0.0F, 0.0F));
+                .addOrReplaceChild("top", CubeListBuilder.create().texOffs(32, 0).addBox(-4.0F, -11.0F, -4.0F, 8.0F, 3.0F, 8.0F), PartPose.offset(0.0F, 0.0F, 0.0F))
+                .addOrReplaceChild("beard", CubeListBuilder.create().texOffs(49, 17).addBox(-1.0F, 0.0F, -0.7F, 2.0F, 3.0F, 1.0F), PartPose.offsetAndRotation(0.0F, 0.0F, -3.0F, -0.7854F, 0.0F, 0.0F));
         partdefinition.addOrReplaceChild("right_arm", CubeListBuilder.create().texOffs(40, 16).addBox(-1.0F, -2.0F, -1.0F, 2.0F, 12.0F, 2.0F), PartPose.offset(-5.0F, 2.0F, 0.0F));
         partdefinition.addOrReplaceChild("left_arm", CubeListBuilder.create().texOffs(40, 16).mirror().addBox(-1.0F, -2.0F, -1.0F, 2.0F, 12.0F, 2.0F), PartPose.offset(5.0F, 2.0F, 0.0F));
         partdefinition.addOrReplaceChild("right_leg", CubeListBuilder.create().texOffs(0, 16).addBox(-1.0F, 0.0F, -1.0F, 2.0F, 12.0F, 2.0F), PartPose.offset(-2.0F, 12.0F, 0.0F));
@@ -29,7 +29,6 @@ public class MournerModel<T extends Mourner> extends HumanoidModel<T> {
         partdefinition.addOrReplaceChild("hat", CubeListBuilder.create(), PartPose.offset(0.0F, 0.0F, 0.0F));
         return LayerDefinition.create(meshdefinition, 64, 32);
     }
-
 
     public void prepareMobModel(T p_103793_, float p_103794_, float p_103795_, float p_103796_) {
         this.rightArmPose = HumanoidModel.ArmPose.EMPTY;

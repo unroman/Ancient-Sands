@@ -22,10 +22,13 @@
  "block.ancientsand.ancient_block": "Блок стародавнього металу",
  "block.ancientsand.chamber": "Звичайне сховище",
  "block.ancientsand.royal_chamber": "Королівське сховище",
- "block.ancientsand.royal_carpet": "Королівський килим",
+ "block.ancientsand.rug_red": "Червоний килимок",
+ "block.ancientsand.rug_purple": "Фіолетовий килимок",
+ "block.ancientsand.rug_white": "Білий килимок",
+ "block.ancientsand.rug_black": "Чорний килимок",
 
  "advancements.ancientsand.jug.title": "Віддаючи цивілізацію",
  "advancements.ancientsand.jug.description": "Знайдіть пивоварний глек у сховищі",
- "advancements.ancientsand.royal_carpet.title": "Заверніть!",
- "advancements.ancientsand.royal_carpet.description": "Знайдіть королівський килим у тронному залі"
+ "advancements.ancientsand.rug.title": "Заверніть!",
+ "advancements.ancientsand.rug.description": "Знайдіть червоний килимок у тронному залі"
 }

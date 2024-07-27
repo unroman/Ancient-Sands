@@ -120,7 +120,7 @@ public class Mourner extends Monster {
         public void tick() {
             --this.attackWarmupDelay;
             Mourner.this.setCasting(true);
-            if (this.attackWarmupDelay == 0) {
+            if (this.attackWarmupDelay == 0 && Mourner.this.getTarget() != null) {
                 Mourner.this.getTarget().addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 300, 0, true, false), Mourner.this);
                 Mourner.this.addEffect(new MobEffectInstance(MobEffects.INVISIBILITY, 280, 0, true, false), Mourner.this);
                 Mourner.this.getTarget().hurt( Mourner.this.damageSources().magic(), 1);

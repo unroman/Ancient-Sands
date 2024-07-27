@@ -1,0 +1,62 @@
+{
+  "variants": {
+    "north=true,south=true,west=true,east=true": {
+      "model": "ancientsand:block/rug_purple_all"
+    },
+    "north=false,south=false,west=false,east=false": {
+      "model": "ancientsand:block/rug_purple_middle"
+    },
+    "north=false,south=true,west=true,east=true": {
+      "model": "ancientsand:block/rug_purple_way",
+      "y": 180
+    },
+    "north=true,south=true,west=false,east=true": {
+      "model": "ancientsand:block/rug_purple_way",
+      "y": 90
+    },
+    "north=true,south=true,west=true,east=false": {
+      "model": "ancientsand:block/rug_purple_way",
+      "y": 270
+    },
+    "north=true,south=false,west=true,east=true": {
+      "model": "ancientsand:block/rug_purple_way"
+    },
+    "north=false,south=false,west=true,east=true": {
+      "model": "ancientsand:block/rug_purple_pipe"
+    },
+    "north=true,south=true,west=false,east=false": {
+      "model": "ancientsand:block/rug_purple_pipe",
+      "y": 90
+    },
+    "north=false,south=true,west=false,east=true": {
+      "model": "ancientsand:block/rug_purple_corner",
+      "y": 180
+    },
+    "north=true,south=false,west=false,east=true": {
+      "model": "ancientsand:block/rug_purple_corner",
+      "y": 90
+    },
+    "north=false,south=true,west=true,east=false": {
+      "model": "ancientsand:block/rug_purple_corner",
+      "y": 270
+    },
+    "north=true,south=false,west=true,east=false": {
+      "model": "ancientsand:block/rug_purple_corner"
+    },
+    "north=false,south=false,west=false,east=true": {
+      "model": "ancientsand:block/rug_purple_side",
+      "y": 180
+    },
+    "north=true,south=false,west=false,east=false": {
+      "model": "ancientsand:block/rug_purple_side",
+      "y": 90
+    },
+    "north=false,south=true,west=false,east=false": {
+      "model": "ancientsand:block/rug_purple_side",
+      "y": 270
+    },
+    "north=false,south=false,west=true,east=false": {
+      "model": "ancientsand:block/rug_purple_side"
+    }
+  }
+}

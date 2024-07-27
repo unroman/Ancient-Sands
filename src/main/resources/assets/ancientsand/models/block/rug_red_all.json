@@ -1,0 +1,6 @@
+{
+  "parent": "ancientsand:block/connected_carpet",
+  "textures": {
+    "wool": "ancientsand:block/rug_red_all"
+  }
+}

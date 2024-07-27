@@ -20,8 +20,10 @@ public class ModTab {
                 output.accept(ModBlocks.REMNANT_BLOCK.get());
                 output.accept(ModBlocks.REMNANT_STAIRS.get());
                 output.accept(ModBlocks.REMNANT_SLAB.get());
-                output.accept(ModBlocks.ROYAL_CARPET.get());
-                output.accept(ModItems.JUG.get());
+                output.accept(ModBlocks.RUG_WHITE.get());
+                output.accept(ModBlocks.RUG_BLACK.get());
+                output.accept(ModBlocks.RUG_RED.get());
+                output.accept(ModBlocks.RUG_PURPLE.get());
                 output.accept(ModItems.CHAMBER_KEY.get());
                 output.accept(ModItems.ROYAL_KEY.get());
                 output.accept(ModItems.LYRE.get());
@@ -29,6 +31,7 @@ public class ModTab {
                 output.accept(ModItems.ANCIENT_DAGGER.get());
                 output.accept(ModItems.ANCIENT_INGOT.get());
                 output.accept(ModItems.ANCIENT_NUGGET.get());
+                output.accept(ModItems.JUG.get());
                 output.accept(ModItems.PARCHED_EGG.get());
                 output.accept(ModItems.MOURNER_EGG.get());
             }).build());

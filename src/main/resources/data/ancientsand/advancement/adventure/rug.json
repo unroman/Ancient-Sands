@@ -3,13 +3,13 @@
   "display":{
     "icon":{
       "count": 1,
-      "id": "ancientsand:royal_carpet"
+      "id": "ancientsand:rug_red"
     },
     "title":{
-      "translate":"advancements.ancientsand.royal_carpet.title"
+      "translate":"advancements.ancientsand.rug.title"
     },
     "description":{
-      "translate":"advancements.ancientsand.royal_carpet.description"
+      "translate":"advancements.ancientsand.rug.description"
     },
     "show_toast":true,
     "announce_to_chat":false,
@@ -21,7 +21,7 @@
         "items":[
           {
             "items":[
-              "ancientsand:royal_carpet"
+              "ancientsand:rug_red"
             ]
           }
         ]

@@ -22,10 +22,13 @@
  "block.ancientsand.ancient_block": "Iidne metalliplokk",
  "block.ancientsand.chamber": "Tavaline kamber",
  "block.ancientsand.royal_chamber": "Kuninglik kamber",
- "block.ancientsand.royal_carpet": "Kuninglik vaip",
+ "block.ancientsand.rug_red": "Punane sõba",
+ "block.ancientsand.rug_purple": "Lilla sõba",
+ "block.ancientsand.rug_white": "Valge sõba",
+ "block.ancientsand.rug_black": "Must sõba",
 
  "advancements.ancientsand.jug.title": "Tsivilisatsiooni ära andmine",
  "advancements.ancientsand.jug.description": "Leidke õllekann kambrist",
- "advancements.ancientsand.royal_carpet.title": "Mähi sisse!",
- "advancements.ancientsand.royal_carpet.description": "Leidke trooniruumist kuninglik vaip"
+ "advancements.ancientsand.rug.title": "Mähi sisse!",
+ "advancements.ancientsand.rug.description": "Leidke trooniruumist punane sõba"
 }
