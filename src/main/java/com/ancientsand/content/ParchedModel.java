@@ -34,15 +34,15 @@ public class ParchedModel<T extends Mob> extends HumanoidModel<T> {
         super.prepareMobModel(p_103793_, p_103794_, p_103795_, p_103796_);
     }
 
-    public void setupAnim(T p_103798_, float p_103799_, float p_103800_, float p_103801_, float p_103802_, float p_103803_) {
+    public void setupAnim(T entity, float p_103799_, float p_103800_, float p_103801_, float p_103802_, float p_103803_) {
         this.head.yRot = p_103802_ * ((float)Math.PI / 180F);
         this.head.xRot = p_103803_ * ((float)Math.PI / 180F);
+        this.rightArm.zRot = 0.0F;
+        this.leftArm.zRot = 0.0F;
+        this.leftArm.yRot = 0.0F;
+        this.rightArm.yRot = 0.0F;
         if (this.riding) {
-            this.rightArm.yRot = 0.0F;
-            this.rightArm.zRot = 0.0F;
             this.leftArm.xRot = (-(float)Math.PI / 5F);
-            this.leftArm.yRot = 0.0F;
-            this.leftArm.zRot = 0.0F;
             this.rightLeg.xRot = -1.4137167F;
             this.rightLeg.yRot = ((float)Math.PI / 10F);
             this.rightLeg.zRot = 0.07853982F;
@@ -50,11 +50,9 @@ public class ParchedModel<T extends Mob> extends HumanoidModel<T> {
             this.leftLeg.yRot = (-(float)Math.PI / 10F);
             this.leftLeg.zRot = -0.07853982F;
         } else {
-            this.rightArm.yRot = 0.0F;
-            this.rightArm.zRot = 0.0F;
+            AnimationUtils.bobModelPart(this.rightArm, p_103801_, 1.0F);
+            AnimationUtils.bobModelPart(this.leftArm, p_103801_, -1.0F);
             this.leftArm.xRot = Mth.cos(p_103799_ * 0.6662F) * 2.0F * p_103800_ * 0.5F;
-            this.leftArm.yRot = 0.0F;
-            this.leftArm.zRot = 0.0F;
             this.rightLeg.xRot = Mth.cos(p_103799_ * 0.6662F) * 1.4F * p_103800_ * 0.5F;
             this.rightLeg.yRot = 0.0F;
             this.rightLeg.zRot = 0.0F;
@@ -62,8 +60,8 @@ public class ParchedModel<T extends Mob> extends HumanoidModel<T> {
             this.leftLeg.yRot = 0.0F;
             this.leftLeg.zRot = 0.0F;
         }
-        if (p_103798_.isAggressive()) {
-            AnimationUtils.swingWeaponDown(this.rightArm, this.leftArm, p_103798_, this.attackTime, p_103801_);
+        if (entity.isAggressive()) {
+            AnimationUtils.swingWeaponDown(this.rightArm, this.leftArm, entity, this.attackTime, p_103801_);
         } else {
             this.rightArm.xRot = 0.0F;
             this.head.xRot = Mth.cos(p_103799_ * 0.6662F) * p_103800_ * 0.4F;

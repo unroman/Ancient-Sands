@@ -23,9 +23,12 @@
  "block.ancientsand.chamber": "Обычное хранилище",
  "block.ancientsand.royal_chamber": "Королевское хранилище",
  "block.ancientsand.rug_red": "Красный килим",
- "block.ancientsand.rug_purple": "Пурпурный килим",
+ "block.ancientsand.rug_purple": "Фиолетовый килим",
  "block.ancientsand.rug_white": "Белый килим",
  "block.ancientsand.rug_black": "Черный килим",
+ "block.ancientsand.rug_blue": "Синий килим",
+ "block.ancientsand.rug_gray": "Серый килим",
+ "block.ancientsand.rug_green": "Зелёный килим",
 
  "advancements.ancientsand.jug.title": "Отдавая цивилизацию",
  "advancements.ancientsand.jug.description": "Найдите пивоваренный кувшин в хранилище",

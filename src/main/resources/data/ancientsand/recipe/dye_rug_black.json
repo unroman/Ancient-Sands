@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:black_dye"
+    },
+    [
+      {
+        "item": "ancientsand:rug_blue"
+      },
+      {
+        "item": "ancientsand:rug_gray"
+      },
+      {
+        "item": "ancientsand:rug_green"
+      },
+      {
+        "item": "ancientsand:rug_purple"
+      },
+      {
+        "item": "ancientsand:rug_red"
+      },
+      {
+        "item": "ancientsand:rug_white"
+      }
+    ]
+  ],
+  "result": {
+    "id": "ancientsand:rug_black",
+    "count": 1
+  }
+}

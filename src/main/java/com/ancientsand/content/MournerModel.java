@@ -1,6 +1,7 @@
 package com.ancientsand.content;
 
 import com.mojang.blaze3d.vertex.PoseStack;
+import net.minecraft.client.model.AnimationUtils;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
@@ -15,7 +16,6 @@ public class MournerModel<T extends Mourner> extends HumanoidModel<T> {
     public MournerModel(ModelPart p_170941_) {
         super(p_170941_);
     }
-
     public static LayerDefinition createBodyLayer() {
         MeshDefinition meshdefinition = HumanoidModel.createMesh(CubeDeformation.NONE, 0.0F);
         PartDefinition partdefinition = meshdefinition.getRoot();
@@ -39,13 +39,13 @@ public class MournerModel<T extends Mourner> extends HumanoidModel<T> {
     public void setupAnim(T entity, float p_103799_, float p_103800_, float p_103801_, float p_103802_, float p_103803_) {
         this.head.yRot = p_103802_ * ((float)Math.PI / 180F);
         this.head.xRot = p_103803_ * ((float)Math.PI / 180F);
+        this.rightArm.zRot = 0.0F;
+        this.leftArm.zRot = 0.0F;
+        this.leftArm.yRot = 0.0F;
+        this.rightArm.yRot = 0.0F;
         if (this.riding) {
             this.rightArm.xRot = (-(float)Math.PI / 5F);
-            this.rightArm.yRot = 0.0F;
-            this.rightArm.zRot = 0.0F;
             this.leftArm.xRot = (-(float)Math.PI / 5F);
-            this.leftArm.yRot = 0.0F;
-            this.leftArm.zRot = 0.0F;
             this.rightLeg.xRot = -1.4137167F;
             this.rightLeg.yRot = ((float)Math.PI / 10F);
             this.rightLeg.zRot = 0.07853982F;
@@ -53,12 +53,10 @@ public class MournerModel<T extends Mourner> extends HumanoidModel<T> {
             this.leftLeg.yRot = (-(float)Math.PI / 10F);
             this.leftLeg.zRot = -0.07853982F;
         } else {
+            AnimationUtils.bobModelPart(this.rightArm, p_103801_, 1.0F);
+            AnimationUtils.bobModelPart(this.leftArm, p_103801_, -1.0F);
             this.rightArm.xRot = Mth.cos(p_103799_ * 0.6662F + (float)Math.PI) * 2.0F * p_103800_ * 0.5F;
-            this.rightArm.yRot = 0.0F;
-            this.rightArm.zRot = 0.0F;
             this.leftArm.xRot = Mth.cos(p_103799_ * 0.6662F) * 2.0F * p_103800_ * 0.5F;
-            this.leftArm.yRot = 0.0F;
-            this.leftArm.zRot = 0.0F;
             this.rightLeg.xRot = Mth.cos(p_103799_ * 0.6662F) * 1.4F * p_103800_ * 0.5F;
             this.rightLeg.yRot = 0.0F;
             this.rightLeg.zRot = 0.0F;

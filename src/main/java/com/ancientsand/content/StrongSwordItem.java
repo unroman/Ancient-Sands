@@ -31,6 +31,7 @@ public class StrongSwordItem extends SwordItem {
                     target.hurt(player.damageSources().mobAttack(player), 11);
                     stack.hurtAndBreak(3, player, EquipmentSlot.MAINHAND);
                 }
+                player.swing(player.getUsedItemHand(), false);
                 player.getCooldowns().addCooldown(stack.getItem(), 40);
                 level.playSound(player, player.blockPosition(), SoundEvents.PLAYER_ATTACK_SWEEP, player.getSoundSource(),1.0f, 1.0f);
             }

@@ -27,6 +27,9 @@ public class ModBlocks {
     public static RegistryObject<Block> RUG_PURPLE = register(() -> new ConnectedCarpetBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.PURPLE_CARPET)), "rug_purple");
     public static RegistryObject<Block> RUG_WHITE = register(() -> new ConnectedCarpetBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CARPET)), "rug_white");
     public static RegistryObject<Block> RUG_BLACK = register(() -> new ConnectedCarpetBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BLACK_CARPET)), "rug_black");
+    public static RegistryObject<Block> RUG_GRAY = register(() -> new ConnectedCarpetBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GRAY_CARPET)), "rug_gray");
+    public static RegistryObject<Block> RUG_GREEN = register(() -> new ConnectedCarpetBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GREEN_CARPET)), "rug_green");
+    public static RegistryObject<Block> RUG_BLUE = register(() -> new ConnectedCarpetBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BLUE_CARPET)), "rug_blue");
 
     public static RegistryObject<Block> register(Supplier<Block> builder, String name) {
         RegistryObject<Block> blockRegistryObject = BLOCK.register(name, builder);
